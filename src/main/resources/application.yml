@@ -2,7 +2,7 @@ spring:
   application:
     name: thymeleaf-crud
   datasource:
-    url: jdbc:mysql://localhost:3306/mydb?useSSL=false&serverTimezone=Asia/Seoul
+    url: jdbc:mysql://localhost:3306/my_link?useSSL=false&serverTimezone=Asia/Seoul
     username: root
     password: 1234
     driver-class-name: com.mysql.cj.jdbc.Driver
