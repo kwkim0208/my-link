@@ -1,18 +1,25 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="kor">
-<head>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head th:fragment="head">
     <meta charset="UTF-8">
-    <title>Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
-</head>
-<header th:fragment="header">
-    <!-- jQuery -->
-    <script th:src="@{/js/jquery3.7.1.min.js}"></script>
-    <!-- Popper.js -->
-    <script th:src="@{/js/popper.min.js}"></script>
-    <!-- Bootstrap JS (Popper.js 포함 번들 대신 분리 사용) -->
-    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <title th:text="${pageTitle} ?: '나의 서비스'">나의 서비스</title>
 
-</header>
+    <!-- Bootstrap 5 CSS -->
+    <link rel="stylesheet"
+          th:href="@{/css/bootstrap.min.css}">
+
+    <style>
+        body {
+            padding-top: 70px; /* navbar 고정 시 본문 밀림 방지 */
+        }
+    </style>
+
+    <!-- jQuery -->
+    <script th:src="@{/js/jquery-3.7.1.min.js}"></script>
+    <script th:src="@{/js/popper.min.js}"></script>
+    <script th:src="@{/js/jquery-3.7.1.min.js}"></script>
+    <!-- Bootstrap 5 JS Bundle (Popper 포함) -->
+    <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+</head>
 </html>

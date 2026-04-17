@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="~{fragments/header :: head}"></head>
+<body>
+
+    <!-- 네비게이션 -->
+    <nav th:replace="~{fragments/nav :: nav}"></nav>
+
+    <!-- 메인 컨텐츠 영역 -->
+    <main class="container my-4">
+
+        <!-- 페이지 타이틀 (선택적으로 사용) -->
+        <div th:if="${pageTitle}" class="mb-4">
+            <h4 class="fw-bold border-start border-4 border-primary ps-3"
+                th:text="${pageTitle}"></h4>
+        </div>
+
+        <!-- 알림 메시지 (성공) -->
+        <div th:if="${successMsg}"
+             class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="bi bi-check-circle me-2"></i>
+            <span th:text="${successMsg}"></span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+
+        <!-- 알림 메시지 (에러) -->
+        <div th:if="${errorMsg}"
+             class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="bi bi-exclamation-triangle me-2"></i>
+            <span th:text="${errorMsg}"></span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+
+        <!-- ★ 각 페이지가 이 자리에 본문을 삽입 ★ -->
+        <th:block layout:fragment="content"></th:block>
+
+    </main>
+
+    <!-- 푸터 -->
+    <footer th:replace="~{fragments/footer :: footer}"></footer>
+
+    <!-- 공통 스크립트 -->
+    <script th:src="@{/js/main.js}"></script>
+
+    <!-- ★ 각 페이지 전용 스크립트 삽입 영역 ★ -->
+    <th:block layout:fragment="script"></th:block>
+
+</body>
+</html>

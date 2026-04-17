@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<nav th:fragment="nav" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+    <div class="container">
+
+        <!-- 브랜드 로고 -->
+        <a class="navbar-brand fw-bold" th:href="@{/}">
+            <i class="bi bi-layers-fill me-1"></i> MyApp
+        </a>
+
+        <!-- 모바일 토글 버튼 -->
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="메뉴 열기">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- 메뉴 -->
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/}" th:classappend="${currentMenu == 'home'} ? 'active' : ''">
+                        <i class="bi bi-house me-1"></i>홈
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/board}" th:classappend="${currentMenu == 'board'} ? 'active' : ''">
+                        <i class="bi bi-card-list me-1"></i>게시판
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false"
+                       th:classappend="${currentMenu == 'mypage'} ? 'active' : ''">
+                        <i class="bi bi-person me-1"></i>마이페이지
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li><a class="dropdown-item" th:href="@{/mypage/profile}">프로필</a></li>
+                        <li><a class="dropdown-item" th:href="@{/mypage/settings}">설정</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-danger" th:href="@{/logout}">로그아웃</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- 우측 버튼 (비로그인 시) -->
+            <div class="d-flex gap-2" th:if="${session.loginUser == null}">
+                <a th:href="@{/login}" class="btn btn-outline-light btn-sm">로그인</a>
+                <a th:href="@{/join}" class="btn btn-primary btn-sm">회원가입</a>
+            </div>
+
+            <!-- 우측 사용자 정보 (로그인 시) -->
+            <div class="d-flex align-items-center gap-2 text-white" th:if="${session.loginUser != null}">
+                <i class="bi bi-person-circle fs-5"></i>
+                <span class="small" th:text="${session.loginUser.name} + '님'">사용자님</span>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script th:inline="javascript">
+    $(document).ready(function () {
+        // 현재 경로에 해당하는 nav-link에 active 클래스 자동 부여 (보조용)
+        var path = window.location.pathname;
+        $('.nav-link').each(function () {
+            var href = $(this).attr('href');
+            if (href && path.startsWith(href) && href !== '/') {
+                $(this).addClass('active');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
