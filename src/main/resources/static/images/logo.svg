@@ -1,0 +1,46 @@
+<svg width="114" height="46" viewBox="192 49 114 46" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>올래 로고</title>
+
+<rect x="192" y="49" width="114" height="46" fill="#FFFFFF"/>
+
+<g transform="translate(192,49) scale(0.5) translate(-192,-49)">
+
+  <!-- 아이콘 배경: 보라 -->
+  <rect x="192" y="52" width="90" height="90" rx="18" fill="#534AB7"/>
+  <rect x="192" y="52" width="90" height="90" rx="18" fill="none" stroke="white" stroke-width="1" opacity="0.15"/>
+
+  <!-- 오픈북 - 왼쪽 페이지 -->
+  <path d="M237,73 L237,124 L209,121 Q204,120 204,115 L204,83 Q204,78 209,77 Z" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- 오른쪽 페이지 -->
+  <path d="M237,73 L237,124 L265,121 Q270,120 270,115 L270,83 Q270,78 265,77 Z" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round"/>
+
+  <!-- 왼쪽 줄 -->
+  <line x1="210" y1="88" x2="233" y2="88" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+  <line x1="210" y1="97" x2="233" y2="97" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+  <line x1="210" y1="106" x2="233" y2="106" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+  <line x1="210" y1="115" x2="225" y2="115" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.45"/>
+
+  <!-- 오른쪽 줄 -->
+  <line x1="241" y1="88" x2="264" y2="88" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+  <line x1="241" y1="97" x2="264" y2="97" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+  <line x1="241" y1="106" x2="264" y2="106" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+  <line x1="241" y1="115" x2="258" y2="115" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.45"/>
+
+  <!-- 틸 포인트 장식 -->
+  <path d="M282,107 Q282,142 247,142 L282,142 Z" fill="#1D9E75" opacity="0.9"/>
+
+  <!-- 예약 배지: 앰버 -->
+  <circle cx="274" cy="60" r="13.5" fill="white"/>
+  <circle cx="274" cy="60" r="11" fill="#EF9F27"/>
+  <polyline points="267.5,60 271.5,65 281,54" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- 구분선: 보라→틸 투톤 -->
+  <line x1="305" y1="63" x2="305" y2="100" stroke="#534AB7" stroke-width="1.5" opacity="0.35"/>
+  <line x1="305" y1="100" x2="305" y2="142" stroke="#1D9E75" stroke-width="1.5" opacity="0.35"/>
+
+  <!-- 워드마크 -->
+  <text x="320" y="118" font-family="Noto Sans CJK KR, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="56" font-weight="700" fill="#534AB7">올</text>
+  <text x="374" y="118" font-family="Noto Sans CJK KR, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="56" font-weight="700" fill="#1D9E75">래</text>
+
+</g>
+</svg>

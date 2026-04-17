@@ -6,11 +6,22 @@
     <div class="container">
         <div class="row">
 
-            <!-- 서비스 소개 -->
+            <!-- 서비스 소개 + 로고 -->
             <div class="col-md-4 mb-3">
-                <h6 class="fw-bold mb-2">
-                    <i class="bi bi-layers-fill me-1"></i> MyApp
-                </h6>
+                <a th:href="@{/}" class="d-flex align-items-center gap-2 text-decoration-none mb-2">
+                    <!-- 로고 이미지: /static/images/logo.png 에 파일 추가 후 사용 -->
+                    <img th:src="@{/images/logo.svg}"
+                         alt="로고"
+                         width="32"
+                         height="32"
+                         class="rounded"
+                         onerror="this.style.display='none'; document.getElementById('footerLogoIcon').style.display='inline';">
+                    <!-- 로고 이미지 없을 때 아이콘 대체 -->
+                    <span id="footerLogoIcon" style="display:none;">
+                        <i class="bi bi-layers-fill text-white fs-5"></i>
+                    </span>
+                    <span class="fw-bold text-white fs-6">MyApp</span>
+                </a>
                 <p class="text-muted small mb-0">
                     Spring Boot + Thymeleaf 기반 풀스택 서비스입니다.
                 </p>

@@ -19,8 +19,9 @@ public class SecurityConfig {
     }
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests(auth -> auth
-                .requestMatchers("/", "/login", "/css/**", "/js/**").permitAll()
+        http
+                .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/", "/login", "/css/**", "/js/**","/images/**").permitAll()
                 .requestMatchers("/admin/**").hasRole("ADMIN")
                 .requestMatchers("/user/**").hasAnyRole("USER","ADMIN").anyRequest().authenticated())
                 .formLogin(form -> form
@@ -40,7 +41,11 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(session->session
                         .maximumSessions(1)
-                        .maxSessionsPreventsLogin(false));
+                        .maxSessionsPreventsLogin(false)
+
+                );
+
+
         return http.build();
     }
 }
